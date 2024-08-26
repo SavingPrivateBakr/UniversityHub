@@ -1,0 +1,189 @@
+body {
+
+  font-family: 'Enriqueta', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+   margin-top: 90px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #e5e5e54d;
+}
+
+.Title {
+ 
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.uni-container {
+  display: flex;
+  flex-direction: row;
+justify-content: left;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  gap: 10px; /* Space between items */
+  background-color: #ffffff70;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.card, .ncard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0);
+  background: #ffffff;
+ 
+}
+
+.card {
+ 
+  background-color: #5555555e;
+  margin-top: 20px;
+margin-left: 15px;
+  display: flex; 
+  flex-direction: column; /* Stack card elements vertically */
+  border: 1px solid ; /* Light border */
+  border-radius: 8px;     /* Rounded corners */
+  overflow: hidden;       /* Hide overflow content */
+height: 160px;
+  width:270px;           /* Fixed width for the card */
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.ncard {
+ 
+  background-color: #00ff629c;
+  margin-top: 20px;
+margin-left: 15px;
+  display: flex; 
+  flex-direction: column; /* Stack card elements vertically */
+  border: 1px solid ; /* Light border */
+  border-radius: 8px;     /* Rounded corners */
+  overflow: hidden;       /* Hide overflow content */
+  height: 160px;
+  width:270px;           /* Fixed width for the card */
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.card:hover, .ncard:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.country {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+}
+
+.name {
+  font-size: 1em;
+  color: #555;
+}
+
+.link {
+  font-size: 0.9em;
+  color: #777;
+}
+
+image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.styled-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.styled-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.styled-input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* app.component.css */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #333;
+}
+
+.person-cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: left;
+  
+
+}
+
+.person-card {
+  border: 1px solid #dddddd00;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 15px;
+  background-color: #ffffff70;
+  transition: box-shadow 0.3s ease;
+  
+}
+
+.person-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.person-name {
+  margin: 0;
+  font-size: 3em;
+  color: #333;
+}
+
+.person-email {
+  margin: 0;
+  font-size: 2em;
+  color: #666;
+}
+
+.card-details {
+  font-size: 0.9em;
+  color: #444;
+}
+
+.detail-item {
+  margin: 5px 0;
+}

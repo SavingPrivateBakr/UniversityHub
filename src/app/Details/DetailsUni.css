@@ -1,0 +1,128 @@
+.college-profile {
+
+  max-width: 1500px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.726);
+  border-radius: 10px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  margin: 0 0 10px;
+}
+
+.profile-location {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.quick-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.profile-nav li {
+  margin-right: 20px;
+}
+
+.profile-section {
+  margin-bottom: 40px;
+}
+
+.program-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.program-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.facility-item {
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.apply-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.contact-button {
+  background-color: #28a745;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .quick-stats {
+    justify-content: center;
+  }
+
+  .profile-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .profile-nav li {
+    margin-bottom: 10px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

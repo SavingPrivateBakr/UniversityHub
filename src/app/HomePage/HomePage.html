@@ -1,0 +1,113 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+  <div class="container">
+    <p class="styled-paragraph">
+      <span class="first-line">Achieve your goal in biggest Universities of Russia</span>
+      <img class="image" src="https://cdn.dribbble.com/users/926537/screenshots/8768655/media/0eb8fcc9f2b8a55c589cfabd6cc89d94.gif" alt="Animated image of a goal achievement">
+    </p>
+
+    <div class="containers">
+      <ul class="menu-items">
+        <li class="menu-item">
+          <div class="dish-card">
+            <div class="dish-image">
+              <img src="https://images.akhbarelyom.com/images/images/large/2016/11/29/098b89af7d4a478c5d084da34f1fd208.jpg" alt="mixed vegetable salad in a mason jar." />
+           
+            </div>
+            <div class="dish-details">
+              <h2 class="dish-title">About Universities</h2>
+              <div class="dish-description">
+                <p>Universities in Europe offer a rich tapestry of educational experiences, deeply rooted in a long tradition of academic excellence and cultural diversity. <br> <br> From the historic institutions of the United Kingdom, such as Oxford and Cambridge, known for their rigorous scholarship and centuries-old traditions, to the cutting-edge research facilities in Germany and Sweden that drive innovation in science and technology, Europe's universities are renowned for their high standards and global impact. <br> Many European universities, such as those in the Netherlands and France, offer a broad range of programs in English, attracting students from around the world. <br> <br> These institutions not only provide top-tier education but also foster an environment of cross-cultural exchange and intellectual growth. With a commitment to both historical legacy and forward-thinking approaches, European universities continue to be a magnet for students seeking to immerse themselves in diverse academic and cultural settings.
+                </p>
+               
+              
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="menu-item">
+          <div class="dish-card">
+            <div class="dish-image">
+              <img src="https://i.ytimg.com/vi/pxrOfzzLrYE/maxresdefault.jpg" alt="a Reuben sandwich on wax paper." />
+      
+            </div>
+            <div class="dish-details">
+              <h2 class="dish-title">Tuition fees</h2>
+              <div class="dish-description">
+                Tuition fees at universities in Europe vary widely, reflecting the region's diverse educational landscape.<br>
+                In many European countries, higher education is subsidized by the government, which helps keep tuition costs relatively low compared to other parts of the world.<br>
+                For example, in countries like <strong>Germany</strong> and <strong>Austria</strong>, public universities often charge minimal tuition fees, sometimes only requiring a semester contribution that covers administrative costs and student services.<br><br>
+              
+                In contrast, some European nations, such as the <strong>United Kingdom</strong> and <strong>Switzerland</strong>, have higher tuition fees, particularly for international students.<br>
+                The UK has seen significant increases in fees in recent years, with annual costs reaching up to £9,250 for domestic students and considerably more for international students.<br>
+                Switzerland also has higher fees, but its education system remains highly regarded for its quality and accessibility.<br><br>
+              
+                Additionally, many European universities offer a range of <strong>scholarships</strong> and <strong>financial aid options</strong> to help offset costs, making higher education more accessible.<br>
+                For students from the European Union, fees are often lower, and in some cases, they might be waived altogether for certain programs or institutions.<br><br>
+              
+                Overall, while tuition fees in Europe can vary, the continent's commitment to providing affordable and high-quality education makes it an attractive destination for students from around the globe.
+              
+               
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="menu-item">
+          <div class="dish-card">
+            <div class="dish-image">
+        
+              <img src="https://sudafax.com/wp-content/uploads/2018/11/%D9%85%D8%AD%D9%85%D8%AF-%D8%B1%D9%85%D8%B6%D8%A7%D9%86-780x470.jpg" alt="A side view of a plate of figs and berries." />
+         
+            </div>
+            <div class="dish-details">
+              <h2 class="dish-title"> Take a look</h2>
+              <div class="dish-description">
+                <p>You can easy Apply by clicking here
+                
+                </p>
+                <hr />
+                <p>
+                  <a class="first-line" [routerLink]="['/UniversitySearch']" routerLinkActive="active">Apply Now</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="loading-overlay" *ngIf="!universities.length">
+      <div class="spinner"></div>
+      
+    </div>
+   
+    <div class="uni-container" *ngIf="universities.length">
+   
+      <div class="card" *ngFor="let item of paginatedUniversities; let i = index" UniversityApplication>
+        <div class="image-container">
+          <img class="thumb" src="https://lh3.googleusercontent.com/p/AF1QipMk9lTA8o1VQ4qKeer7bXSfptgpR-DLqxnDpuNm=s1360-w1360-h1020" alt="{{ item.name }}">
+          <button class="apply-buttons" [routerLink]="['/Applyuniversity', item.name]" routerLinkActive="active">Apply Now</button>
+        </div>
+        <div *ngIf="i<=7" class="card-content">
+          <p class="country">{{ item.country }}</p>
+          <p class="name">{{ item.name }}</p>
+          <div class="web-pages">
+            <a href="{{ item.web_pages[0] }}" target="_blank">{{ item.web_pages[0] }}</a>
+          </div>
+        </div>
+      </div>
+      <!-- Pagination Controls -->
+      <div class="pagination">
+        <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+        <span>Page {{ currentPage }} of {{ getTotalPages() }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === getTotalPages()">Next</button>
+      </div>
+    </div>
+  </div>
+

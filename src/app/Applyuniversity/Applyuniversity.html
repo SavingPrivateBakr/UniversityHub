@@ -1,0 +1,51 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <div class="container">
+   
+    <div class="form-container">
+      <h3 [hidden]="!succ">You Have Succefully Applied</h3>
+      <div  [hidden]="succ" class="form-wrapper">
+
+        
+       
+        <form  [formGroup]="myForm"  (ngSubmit)=" shower()"   enctype="multipart/form-data" >
+        
+          <div class="input-group">
+        
+        
+            <label for="signup-username">Email</label>
+            <input type="text" id="signup-username"  formControlName="username" required readonly>
+         
+          </div>
+          <div class="input-group">
+        
+        
+            <label for="signup-username">UniversityName</label>
+            <input readonly type="text" id="signup-username"  formControlName="UniversityName" required>
+            
+          </div>
+          <div class="input-group">
+        
+        
+            <label for="signup-username">Cv</label>
+            <input type="file" id="cv" (change)="onFileChange($event)" multiple required>
+     
+            <span [hidden]=" !show"     [ngStyle]="{
+              'color': 'red',
+               }"
+                >Please Upload an Image </span>
+          </div>
+         
+         
+          <button type="submit" class="submit-button">Apply</button>
+          <p class="toggle-link">Already have an account? <a [ngStyle]="{'cursor':'pointer'}" >Login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+

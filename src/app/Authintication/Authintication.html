@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="form-container">
+     
+      <div class="form-wrapper">
+        <ng-template ErrorDirective *ngIf="!error"></ng-template>
+        
+        <h2>{{ showSignup ? 'Sign Up' : 'Login' }}</h2>
+        
+        <!-- Login Form -->
+        <form  (ngSubmit)="login()" [formGroup]="formsignup"     *ngIf="!showSignup">
+          
+          <div class="input-group">
+            <label for="login-username">Email</label>
+            <input type="text" id="login-username" formControlName="Email"required >
+          </div>
+          <div class="input-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="signup-password" formControlName="Password" required>
+           
+          </div>
+          <span *ngIf="errormessage" [ngStyle]="{'color': 'red'}">{{errormessage}}</span>       
+          <button type="submit" class="submit-button">Login</button>
+          <p class="toggle-link">Don't have an account? <a [ngStyle]="{'cursor':'pointer'}" (click)="toggleForm()">Sign Up</a></p>
+        </form>
+
+        
+        <!-- Signup Form -->
+        <form  (ngSubmit)="signup()"  [formGroup]="formsignup" *ngIf="showSignup">
+        
+          <div class="input-group">
+        
+        
+            <label for="signup-username">Username</label>
+            <input type="text" id="signup-username"  formControlName="username" required>
+     
+      
+        
+        
+            <label for="signup-username">firstname</label>
+            <input type="text" id="signup-username"  formControlName="firstname" required>
+         
+       
+        
+        
+            <label for="signup-username">lastname</label>
+            <input type="text" id="signup-username"  formControlName="lastname" required>
+          
+        
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" formControlName="Email" required>
+  
+        
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" formControlName="Password" required>
+          </div>
+          <ul *ngIf="errormessage && errormessage.length > 0">
+            <li *ngFor="let message of errormessage" [ngStyle]="{'color': 'red'}">
+              {{ message }}
+            </li>
+          </ul>
+          <button type="submit" class="submit-button">Sign Up</button>
+          <p class="toggle-link">Already have an account? <a [ngStyle]="{'cursor':'pointer'}" (click)="toggleForm()">Login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  

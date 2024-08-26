@@ -1,0 +1,59 @@
+<div class="college-profile">
+  <div class="profile-header">
+    <img [src]="profileImage" alt="College Image" class="profile-image">
+    <div class="profile-info">
+      <h1 class="profile-name">{{ name }}</h1>
+      <p class="profile-location">
+        <i class="fas fa-map-marker-alt"></i> {{ country }}
+      </p>
+      <div class="quick-stats">
+        <span><i class="fas fa-users"></i> {{ studentCount }} Students</span>
+        <span><i class="fas fa-graduation-cap"></i> {{ programCount }} Programs</span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="profile-nav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#admissions">Admissions</a></li>
+    </ul>
+  </nav>
+
+  <div id="about" class="profile-section">
+    <h2>About {{ name }}</h2>
+    <p>{{ description }}</p>
+  </div>
+
+  <div id="programs" class="profile-section">
+    <h2>Featured Programs</h2>
+    <div class="program-list">
+      <div *ngFor="let program of featuredPrograms" class="program-card">
+        <h3>{{ program.name }}</h3>
+        <p>{{ program.description }}</p>
+        <a href="#" class="learn-more">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="facilities" class="profile-section">
+    <h2>Campus Facilities</h2>
+    <div class="facility-grid">
+      <div *ngFor="let facility of facilities" class="facility-item">
+        <i [class]="facility.icon"></i>
+        <span>{{ facility.name }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="admissions" class="profile-section">
+    <h2>Admissions</h2>
+    <p>{{ admissionsInfo }}</p>
+    <div class="actions">
+      <button class="apply-button" [routerLink]="['/Applyuniversity', name]" routerLinkActive="active">Apply Now</button>
+      <button class="contact-button" (click)="openContactForm()">Contact Us</button>
+    </div>
+  </div>
+</div>

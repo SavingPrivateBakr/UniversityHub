@@ -1,0 +1,53 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body></body>
+<div class="container">
+
+    
+    <h1 class="Title">List of Universities</h1>
+  
+    <div class="uni-container" *ngIf="body.length">
+      <div class="input-container">
+        <input [(ngModel)]="name" placeholder="Enter University Name " class="styled-input">
+      </div>
+      
+      <div *ngFor="let item of body | filter : name"  >
+    
+       
+      <div  [ngClass]="{ 'card': item.approvalStatus == false, 'ncard': item.approvalStatus !== false }" showcv>
+        
+          
+          <p class="country" >{{ item.universityName }} </p>
+
+          <p>{{item.studentName}}</p>
+
+          <p class="name" >{{ item.approvalStatus === false ? 'Pending' : item.approvalStatus }}</p>
+      </div>
+     
+
+        <div>
+      <image  *ngIf="shower" [imageSrc]="item.files" [id]="item.id"></image>
+    </div>
+         
+        
+      </div>
+     
+      </div>
+  
+  
+       
+  
+      
+   
+    
+      
+    
+    
+      
+
+  </div>
+
+

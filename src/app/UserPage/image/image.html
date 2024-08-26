@@ -1,0 +1,20 @@
+<div id="popup" class="popup" close >
+    <div class="popup-content">
+      <button class="btn" close>close</button>
+      
+      <img [src]="safeImageSrc" alt="z">
+
+      <form  [formGroup]="myForm"  (ngSubmit)=" submit()"   enctype="multipart/form-data" >
+      
+        <p [hidden]="admin" class="announcement">{{ discuss }}</p>
+      <textarea id="my-textarea" placeholder="Enter your text here..."  [hidden]=" !admin"  formControlName="Discuss" ></textarea>
+
+      <button class="verify-button" [hidden]=" !admin"  >Verify</button>
+        
+        
+       
+      
+        </form>
+    </div>
+  </div>
+ 

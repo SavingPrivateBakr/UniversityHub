@@ -1,0 +1,100 @@
+/* Basic Navbar Styles */
+.nav {
+  top: 0; /* Align to the top of the viewport */
+
+    background-color: #ffffff00; /* Bootstrap primary color */
+    position:fixed;
+    margin-top: 30px;
+    padding: 10px;
+    height: 50px;
+    width: 100%;
+    border-radius: 20px 20px 20px 20px;
+  z-index: 10;
+  }
+  
+  ul {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-right: 80px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  
+  }
+  
+  .border {
+   width: auto;
+    margin: 0 18px;
+    border-bottom-width: 5px;
+    display: flex;              
+    justify-content: center;  
+    align-items: center;    
+    cursor:pointer;
+   
+    
+  }
+
+ 
+  
+  .a {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    position: inherit;
+   font-size: 18px;
+    text-decoration: none;
+    color: rgba(1, 1, 1, 0.704);
+    
+    transition-duration:0.2s;
+  }
+  a:hover
+  {
+      
+    color: #000000;
+  }
+ 
+
+  .background{
+z-index: -1;
+    background: radial-gradient(circle at 10% 50%, white 50px, transparent 10px),
+    radial-gradient(circle at 190px 150px, white 100px, transparent 50px),
+    radial-gradient(circle at 100px 650px, white 75px, transparent 25px),
+    radial-gradient(circle at 750px 70px, white 75px, transparent 25px),
+    radial-gradient(circle at 950px 800px, white 90px, transparent 40px),
+    linear-gradient(to bottom, #61d8ff 10%, #2ad1ff 90%);
+    position:fixed;
+    margin-top:0;
+    border-radius: 10px 10px 10px 10px;  
+    box-shadow: 3px 5px 3px rgba(72, 72, 72, 0.323);
+    width: 100%;
+    height: 100%;
+    background-color: #aaf7f9;
+    top: 0; /* Align to the top of the viewport */
+    bottom: 0;
+  }
+.userpage{
+
+  box-shadow: 0.5px 10px 19px rgba(255, 255, 255, 0.252);
+  border-radius: 10px 10px 10px 10px;  
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  position: inherit;
+ font-size: 14px;
+  text-decoration: none;
+  color: rgba(1, 1, 1, 0.704);
+  
+  transition-duration:0.2s;
+  margin-right:900px;
+}
+  @media  (max-width: 516px) {
+  .nav{
+
+ 
+    background-color: #ffffff;
+  }
+
+ 
+}

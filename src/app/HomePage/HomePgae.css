@@ -1,0 +1,381 @@
+
+  .container {
+
+    
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    justify-content:center; /* Centering the content horizontally */
+    align-items: center; /* Centering the content vertically */
+    gap: 60px;
+    
+  }
+  
+  .styled-paragraph {
+    margin-top: 50px;
+    font-size: 60px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center-align text */
+    color: #000; /* Default text color for the paragraph */
+   background-color: rgba(240, 248, 255, 0.904);
+   border-radius: 40px 40px 40px 40px;
+    padding: 20px; /* Padding inside the paragraph */
+    max-width: 900px; /* Maximum width of the paragraph */
+    animation: moveRight 1s linear ; /* Continuous horizontal movement */
+    display: block;
+  }
+  
+  .first-line {
+    color: rgb(0, 0, 0); /* Color for the first line */
+    font-family: "Enriqueta", serif;
+    font-weight: 600;
+    font-style: normal;
+  
+}
+
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+          }
+  100% {
+
+  }
+}
+  .image{
+
+    border-radius: 40px 40px 40px 40px;
+        
+  
+    width: 60%;
+    height: 70%;
+  }
+
+
+  .uni-container {
+ width: 100%;
+  background-color: rgba(255, 255, 255, 0.586);
+    display: flex;    
+    flex-direction: row;  /* Arrange cards in a horizontal row */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;    /* Prevent wrapping to the next line */
+    overflow-x: auto;     /* Enable horizontal scrolling if needed */
+    gap: 10px;            /* Space between cards */
+    animation: moveRight 1s linear ;
+    transition: 0.3s;
+  }
+  .Title {
+    font-family: 'Arial', sans-serif; /* Font style */
+    font-size: 2.5em; /* Font size */
+    color: #333; /* Text color */
+    text-align: center; /* Center-align the text */
+  
+   
+ 
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+
+}
+  
+  /* Style for each card */
+  .card {
+    margin-top: 20px;
+    display: flex; 
+    flex-direction: column; /* Stack card elements vertically */
+    border: 1px solid ; /* Light border */
+    border-radius: 8px;     /* Rounded corners */
+    overflow: hidden;       /* Hide overflow content */
+    box-shadow: 0 4px 3px ; /* Light shadow */
+    width: 350px;           /* Fixed width for the card */
+    transition: 0.3s;
+  }
+  
+  /* Style for the image thumbnail */
+  .thumb {
+    width: 100%;            /* Full width of the card */
+    height: 100%;          /* Fixed height */
+    object-fit: cover; 
+    position: relative;     /* Cover the container without distortion */
+  }
+  
+  /* Style for the card content */
+  .card-content {
+    display: flex;
+    flex-direction: column; /* Stack content elements vertically */
+    justify-content: space-between;
+  }
+  
+  /* Style for the country name */
+  .country {
+    font-family: "Enriqueta", serif;
+    font-size: 1.25rem;    /* Larger font size */
+    color: #333;           /* Darker color */
+
+  }
+  
+  /* Style for the university name */
+  .name {
+    font-weight: 400;
+    font-family: "Enriqueta", serif;
+    font-size: 1.1rem;     /* Slightly smaller than country */
+    color: #555;           /* Medium color */
+  
+  }
+  
+  /* Style for web page links */
+  .web-pages {
+    font-family: "Enriqueta", serif;
+    display: flex;          /* Flexbox for layout */
+    flex-direction: column; /* Stack links vertically */
+  }
+  
+  .web-pages a {
+    color: #007bff;        /* Blue color */
+    text-decoration: none; /* Remove underline */
+    overflow: hidden;     /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    white-space: nowrap;  /* Prevent line breaks */
+  }
+  
+  .web-pages a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3;        /* Darker blue on hover */
+  }
+
+  .card:hover
+  {
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.622);
+  
+  }
+  .pagination {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .pagination button[disabled] {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .page-numbers button {
+    margin: 0 5px;
+    padding: 10px;
+    border: 1px solid #3498db;
+    background-color: white;
+    color: #3498db;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .page-numbers button:hover {
+    background-color: #3498db;
+    color: white;
+  }
+
+
+  .apply-buttons {
+    position: absolute; /* Position the button absolutely within the container */
+    top: 50%; /* Center button vertically */
+    left: 50%; /* Center button horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the button's dimensions */
+    padding: 10px 20px; /* Add some padding */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; 
+  }
+
+  .image-container {
+    position: relative; /* Container must be relatively positioned */
+    display: inline-block; /* Ensure the container fits the image size */
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  .containers {
+    position: relative;
+    
+    animation: moveRight 1s linear ;
+    background-color: #dfdfdf83;
+    width: 100%;
+  }
+  
+  .menu-items {
+    display: flex;
+      
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-item {
+    width: 10px;
+    display: flex;
+    padding: 1rem;
+  }
+  
+  .dish-image {
+    position: relative;
+    max-height: 250px;
+  }
+  
+  .dish-image img {
+    width: 100%;
+    height: 100%;
+   object-fit:cover;
+  }
+  
+  .price-tag {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 0.25rem;
+    background-color: #c89b3f;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  .price-tag span {
+    font-size: 12px;
+    margin-top: -2px;
+  }
+  
+  .seasonal-note {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    border-radius: 0.25rem;
+    background-color: #c89b3f;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  @media (min-width: 40rem) {
+    .menu-item {
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 56rem) {
+    .menu-item {
+      width: 33.3333%;
+    }
+  }
+  
+  .dish-card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .dish-details {
+    position: relative;
+    padding: 16px 12px 32px 24px;
+    margin: 16px 8px 8px 0;
+    max-height: 290px;
+    overflow-y: scroll;
+  }
+  
+  .dish-details::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .dish-details::-webkit-scrollbar-track {
+    box-shadow: 0;
+    border-radius: 0;
+  }
+  
+  .dish-details::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 15px;
+  }
+  
+  .dish-title {
+    position: relative;
+    margin: 0 0 24px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .dish-title::after {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f2f2f2;
+    content: "";
+  }
+  
+  hr {
+    margin: 24px auto;
+    width: 50px;
+    border-top: 2px solid #000000;
+  }
+  
+  .dish-description p {
+    margin: 0 0 24px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .dish-description p:last-child {
+    margin: 0;
+  }
+  .loading-overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

@@ -1,0 +1,85 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <div class="containers">
+    <div class="pageHeader">
+        <div class="wrap">
+            <div class="search">
+                <input  [(ngModel)]="name"  type="text" class="searchTerm" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton" (click)="clicker()">
+                    <i class="fa fa-search"></i>
+                </button>
+              
+            </div>
+            <div class="appearsearch" *ngIf="name">
+              <div  *ngFor="let item of universities | filter : name | filters:selectedCountry:'country'  let i = index">
+               <div class="cardsearch" *ngIf="i<8">
+                <p class="namesearch">{{ item.name }}</p>
+                <p class="countrysearch">{{ item.country }}</p>
+              </div>
+          
+              </div>
+            </div>
+            <div class="dropdownSection">
+             
+              <select  class="countryDropdown" [(ngModel)]="selectedCountry">
+                
+                  <option value="" disabled selected>Select a country</option>
+                  <option value="United States">United States</option>
+                  <option value="Canada">Canada</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="France">France</option>
+                  <option value="Germany">Germany</option>
+                  <option value="Italy">Italy</option>
+                  <option value="Japan">Japan</option>
+                  <option value="China">China</option>
+                  <option value="India">India</option>
+                  <option value="Brazil">Brazil</option>
+                  <!-- Add more countries as needed -->
+              </select>
+          </div>
+        </div>
+    </div>
+ 
+   
+    
+        <div class="mainArticle">
+          <div class="loading-overlay" *ngIf="!load">
+            <div class="spinner"></div>
+            
+          </div>
+          
+            <div  *ngFor="let item of paginatedUniversities   let i = index " >
+              <div class="card">
+                <div class="image-container">
+                  <img class="thumb" src="https://lh3.googleusercontent.com/p/AF1QipMk9lTA8o1VQ4qKeer7bXSfptgpR-DLqxnDpuNm=s1360-w1360-h1020" alt="{{ item.name }}">
+                </div>
+              
+               
+                <div *ngIf="i<=7" class="card-content">
+                    <p class="name">{{ item.name }}</p>
+                  <p class="country" >{{ item.country }}</p>
+                  <div class="web-pages">
+                    <a href="{{ item.web_pages[0] }}" target="_blank">{{ item.web_pages[0] }}</a>
+                  </div>
+                </div>
+                <div class="buttons">
+                <button class="apply-buttons" [routerLink]="['/Applyuniversity', item.name]" routerLinkActive="active">Apply Now</button>
+                <button class="apply-buttons" [routerLink]="['/Details',item.name]" routerLinkActive="active">Details</button>
+            </div>
+          </div>
+           
+              </div>
+          
+           
+              <div class="pagination">
+                <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+                <p>Page {{ currentPage }} of {{ getTotalPages() }}</p>
+                <button (click)="nextPage()" [disabled]="currentPage === getTotalPages()">Next</button>
+              </div>
+        </div>
+    </div>
+
+

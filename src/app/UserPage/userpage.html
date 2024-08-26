@@ -1,0 +1,71 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<div class="container">
+
+ 
+
+<div class="person-cards">
+  <div class="person-card">
+    <div class="card-header">
+      <h2 class="person-name"></h2>
+      <p class="person-email"></p>
+    </div>
+    <div class="card-details">
+      <p class="detail-item"><strong>Phone:</strong> </p>
+      <p class="detail-item"><strong>Address:</strong> </p>
+      <p class="detail-item"><strong>Occupation:</strong> </p>
+    </div>
+  </div>
+</div>
+  
+  <h1 class="Title">List of Universities</h1>
+
+  <div class="uni-container" *ngIf="body.length"   >
+  
+    <div *ngFor="let item of body; let i = index"  >
+  
+     
+
+    
+
+    
+       
+        <div  [ngClass]="{ 'card': item.approvalStatus == false, 'ncard': item.approvalStatus !== false }"  (click)="senddetails(item.files,item.id,item.descussion)" >
+          
+            
+          <p class="country" #universityName>{{ item.universityName }}</p>
+          <p #studentName>{{ item.studentName }}</p>
+          <p class="name" #statusMessage>{{ item.approvalStatus === false ? 'Pending' : 'You Have Successfully applied' }}</p>
+        </div>
+       
+  
+          <div [hidden]="!shower">
+        <image  *ngIf="shower"></image>
+      </div>
+           
+     
+       
+       
+      
+    </div>
+   
+    </div>
+ 
+
+     
+
+    
+ 
+  
+    
+  
+  
+    
+
+</div>
+
+

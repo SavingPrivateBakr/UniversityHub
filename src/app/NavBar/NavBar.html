@@ -1,0 +1,30 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=M+PLUS+1p&display=swap" rel="stylesheet">
+</head>
+
+<div class="background">
+</div>
+<div changer class="nav">
+    <ul>
+      <div class="border" >
+        <li ><a class="userpage" (click)="Navigate()" routerLinkActive="active" [innerText]="text" ></a></li>
+      </div >
+      <div  class="border" >
+      <li ><a class="a" routerLink="home" routerLinkActive="active">Home</a></li>
+    </div>
+    <div class="border"  *ngIf="!sh">
+      <li><a class="a"  routerLink="auth" routerLinkActive="active">SignIn</a></li>
+    </div>
+    <div class="border"  *ngIf="sh" >
+      <li><a class="a"  (click)="signout()" routerLinkActive="active">SignOut</a></li>
+    </div>
+    <div class="border">
+      <li><a class="a" routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    </div>
+    </ul>
+  
+  </div>
+
+
